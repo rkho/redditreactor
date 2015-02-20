@@ -17,6 +17,7 @@ $(document).ready(function(){
 
   $('.submit').on('click', function(event){
     // This is the event for when the submit button is clicked on a post.
+    console.log('yeah!!!')
     var title = $('.title').text();
     var username = $('.username').text();
     var message = $('.message').text();
@@ -31,18 +32,35 @@ $(document).ready(function(){
 
   // COMMENTING //
 
-  $('.comment').on('click', function(event){
-    // Display a Bootstrap Modal that contains the prompt to sobmit a comment
-  });
+  // $('.comment').on('click', function(event){
+  //   // Display a Bootstrap Modal that contains the prompt to sobmit a comment
+  // });
 
-  $('.commentSubmit').on('click', function(event){
-    var title = $('.title').text();
-    var username = $('.username').text();
-    var message = $('.message').text();
+  // $('.commentSubmit').on('click', function(event){
+  //   var title = $('.title').text();
+  //   var username = $('.username').text();
+  //   var message = $('.message').text();
 
-    var currentComment = new Comment(title, username, message);
+  //   var currentComment = new Comment(title, username, message);
 
-    // Post to the server
-    currentComment.send();
-  });
-});
+  //   // Post to the server
+  //   currentComment.send();
+  // });
+
+
+  // DISPLAYS POSTS ON INDEX!! //
+
+  var getPosts = function(){
+    var arr = Message.Collection.models;
+    _.each(arr, function(model){
+      var attributes = model.attributes;
+      $('.box').append('<td align="center" valign="top" width="70px">
+        <img src="img/sponsored.png" width="27" /></td>
+        <td width="75" valign="top"><img src="img/thumb.jpg" width="70" height="70" /></td>
+        <td valign="top"><span class="title"><a href="#">' + attributes.title + '</a></span><span class="source">(i.imgur.com)</span><br />
+        <span class="date">submitted 3 hours ago by <a href="#">' + attributes.username + '</a></span><span class="branch"> to <a href="#">/r/pics</a></span><br />
+        <span class="comments"><a href="#">267 comments</a></span><span class="share"><a href="#">share</a></span></td>');
+    });
+  };
+});//
+
