@@ -1,6 +1,6 @@
 {
   "name": "redditreactor",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/rkho/redditreactor",
   "authors": [
     "Richard Kho <rkho@me.com>"
@@ -14,7 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.3",
-    "underscore": "~1.8.1"
-  }
+    "sweetalert": "~0.4.2",
+    "bootstrap": "~3.3.2"
+  },
+  "description": "a reddit clone powered by hackreactor students"
 }
